@@ -1,0 +1,21 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "fire-dev-20191019142006-authRole",
+            "UnauthRoleArn": "arn:aws:iam::073655690990:role/fire-dev-20191019142006-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::073655690990:role/fire-dev-20191019142006-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "fire-dev-20191019142006-deployment",
+            "UnauthRoleName": "fire-dev-20191019142006-unauthRole",
+            "StackName": "fire-dev-20191019142006",
+            "StackId": "arn:aws:cloudformation:us-east-2:073655690990:stack/fire-dev-20191019142006/c987dbd0-f26a-11e9-ab11-0ade6091f9d8"
+        },
+        "categories": {
+            "auth": {
+                "fire510c19c3": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"2446961025400880\",\"client_secret\":\"2301bfa1c0d6a6745cba3d897f7cf0e8\"}]"
+                }
+            }
+        }
+    }
+}

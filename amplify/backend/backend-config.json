@@ -1,0 +1,9 @@
+{
+    "auth": {
+        "fire510c19c3": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    }
+}
