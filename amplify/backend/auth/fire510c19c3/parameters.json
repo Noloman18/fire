@@ -50,15 +50,15 @@
         "email"
     ],
     "triggers": "{}",
-    "hostedUIDomainName": "fire510c19c3-510c19c3",
-    "authProvidersUserPool": [
-        "Facebook"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
     "permissions": [],
     "dependsOn": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:4200/auth/\"],\"LogoutURLs\":[\"http://localhost:4200/auth/signin/\"]}"
+    "hostedUIDomainName": "fire593d548d-593d548d",
+    "authProvidersUserPool": [
+        "Facebook"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:4200/signedIn/\"],\"LogoutURLs\":[\"http://localhost:4200/signedOut/\"]}"
 }
