@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AppStateService } from '../app-state.service';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,24 +11,18 @@ export class AuthenticationOutcomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private appState: AppStateService,
     private authService: AuthService) { }
 
   ngOnInit() {
-    this.authService.isAuthenticated().subscribe(isLoggedIn => {
-      if (isLoggedIn) {
-        this.router.navigate([this.appState.urlBeforeAuthRedirect ? this.appState.urlBeforeAuthRedirect : '/home']);
-        this.activatedRoute.queryParamMap.subscribe(parameter => {
-          if (parameter['code'])
-            this.authService.accessCode = parameter['code']
-        });
-      }
-      else {
-        this.router.navigate(['/home']);
-      }
-
-      this.appState.urlBeforeAuthRedirect = null;
-    });
+    setTimeout(()=> {
+      this.authService.isAuthenticated().subscribe(isLoggedIn => {
+        if (isLoggedIn) {
+          this.router.navigate(['/home']);
+        }
+        else {
+          this.router.navigate(['/home']);
+        }
+      });
+    },3000);
   }
 }

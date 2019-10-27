@@ -5,8 +5,8 @@
   <span>{{title}} is running</span>
   <div class="spacer"></div>
   
-  <a style="color:white;font-weight: bold;cursor: pointer;" *ngIf="!loggedIn" (click)="signIn()">Sign In</a>
-  <a style="color:white;font-weight: bold;cursor: pointer;" *ngIf="loggedIn" (click)="signOut()">Sign Out</a>
+  <a style="color:white;font-weight: bold;cursor: pointer;" *ngIf="!authService.isLoggedIn()" (click)="signIn()">Sign In</a>
+  <a style="color:white;font-weight: bold;cursor: pointer;" *ngIf="authService.isLoggedIn()" (click)="signOut()">Sign Out</a>
 
   <a aria-label="Angular on twitter" href="https://twitter.com/angular" title="Twitter">
 

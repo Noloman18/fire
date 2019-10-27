@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
@@ -8,16 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'fire';
-  loggedIn = false;
 
-  constructor(private authService: AuthService, private router: Router) { }
-
-  ngOnInit(): void {
-    console.log('Reloaded App Component', new Date());
-    this.authService.isAuthenticated().subscribe(loggedIn => this.loggedIn = loggedIn);
-  }
+  constructor(
+    private authService: AuthService, 
+    private router: Router) { }
 
   signIn() {
     window.location.href = this.authService.hostedUI();
