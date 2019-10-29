@@ -11,7 +11,6 @@ import { CurrentUserOpts } from '@aws-amplify/auth/lib/types';
 })
 export class AuthService {
   private cognitoUser: any;
-  public accessCode;
 
   public hostedUI(): string {
     return 'https://fire593d548d-593d548d-dev.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=1omr9afeoio87nhml4u76249ji&redirect_uri=http://localhost:4200/signedIn/';
@@ -19,7 +18,6 @@ export class AuthService {
 
   public signOut(): Promise<any> {
     this.cognitoUser = null;
-    this.accessCode = null;
     return Auth.signOut();
   }
 
@@ -28,6 +26,9 @@ export class AuthService {
   }
 
   public isAuthenticated(currentUserOptions?:CurrentUserOpts): Observable<boolean> {
+    if (this.cognitoUser)
+      return of(true);
+    
     return fromPromise(Auth.currentAuthenticatedUser(currentUserOptions))
       .pipe(
         map(result => {
